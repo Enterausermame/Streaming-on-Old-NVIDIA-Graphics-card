@@ -1,15 +1,14 @@
-# 无头 Kepler 显卡：虚拟显示 + 远程桌面 + 低延迟串流 全套方案
+# 为无头设备添加串流支持（By Deepseek_V4_Pro_Max）
+> WARNING:初版方案，可能存在未知bug(画面抖动？），请见谅
 
-让一台**没有显示器的 NVIDIA Kepler 老卡（如 GT 730）主机**实现：
+让一台没有显示器的 NVIDIA Kepler 老卡（如 GT 730）主机实现：
 
 - 🖥️ **虚拟显示器**：纯 Python 生成 EDID 注入驱动，桌面/应用全部由 GPU 硬件渲染（1080p/1200p/多屏任意分辨率）
 - 🖼️ **VNC 远程桌面**：x11vnc 共享 GPU 渲染画面，开机自启、自动适配显示器号与认证
 - 🎮 **Moonlight 低延迟串流**：Sunshine + 硬件编码 60fps + 音频同步 + 虚拟键鼠
 - 🔧 **全套踩坑修复**：驱动、音频、鼠标、电源管理的最优配置
 
-> 适用环境：NVIDIA Kepler 架构（GT 730 等）/ Debian 13 trixie / 内核 6.12 / 无头运行。
-> 文中所有网络地址、账号、密码、主机名均以 `<占位符>` 表示，请替换为你自己的值。
-
+> 适用环境：NVIDIA (GT 730）/ Debian 13（trixie） / 6.12 kernel / headless
 ## 目录
 
 ```
@@ -210,6 +209,10 @@ X.Org 采用 DDX（Device Dependent X）架构：服务器管协议与窗口树�
 
 开源驱动 nouveau 占据的是同一位置（DDX `nouveau_drv.so` + 内核模块 `nouveau.ko`）；黑名单它就是为了防止其内核模块抢先绑走显卡，导致专有驱动初始化失败。
 
+
+测试机信息：
+<img width="1115" height="628" alt="image" src="https://github.com/user-attachments/assets/44c3b2fd-24da-48df-b178-3bd3e1724914" />
+
 ## 许可
 
-MIT License — 自由使用、修改、分发。
+MIT
