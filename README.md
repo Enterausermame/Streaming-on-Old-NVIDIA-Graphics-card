@@ -1,4 +1,4 @@
-# 警告！！！！！它仅适用于NVIDIA GT 730（kepler架构），如果在其他显卡手贱部署出现未知问题后果自负！
+# 警告！！！！！它仅在NVIDIA GT 730（kepler架构）下测试通过，如果在其他显卡手贱部署出现未知问题后果自负！
 
 
 # 为NVIDIA GT 730添加串流支持（By Deepseek_V4_Pro_Max）
