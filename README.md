@@ -1,14 +1,18 @@
-# 为无头设备添加串流支持（By Deepseek_V4_Pro_Max）
+# 警告！！！！！它仅适用于NVIDIA GT 730（kepler架构），如果在其他显卡手贱部署出现未知问题后果自负！
+
+
+# 为NVIDIA GT 730添加串流支持（By Deepseek_V4_Pro_Max）
+
 > WARNING:初版方案，可能存在未知bug(画面抖动？），请见谅
 
-让一台没有显示器的 NVIDIA Kepler 老卡（如 GT 730）主机实现：
+让没有显示器的 NVIDIA GT730实现：
 
 - 🖥️ **虚拟显示器**：纯 Python 生成 EDID 注入驱动，桌面/应用全部由 GPU 硬件渲染（1080p/1200p/多屏任意分辨率）
 - 🖼️ **VNC 远程桌面**：x11vnc 共享 GPU 渲染画面，开机自启、自动适配显示器号与认证
 - 🎮 **Moonlight 低延迟串流**：Sunshine + 硬件编码 60fps + 音频同步 + 虚拟键鼠
 - 🔧 **全套踩坑修复**：驱动、音频、鼠标、电源管理的最优配置
 
-> 适用环境：NVIDIA (GT 730）/ Debian 13（trixie） / 6.12 kernel / headless
+> 可用环境：NVIDIA (GT 730）/ Debian 13（trixie） / 6.12 kernel / headless
 ## 目录
 
 ```
