@@ -15,8 +15,7 @@
 ├── vdisplay/                 # 虚拟显示器软件（Python 包：EDID 生成 / Xorg 配置 / CLI）
 ├── systemd/                  # 开机自启服务单元
 ├── tests/                    # EDID 结构单元测试
-├── install.sh                # 安装脚本
-├── install-all.sh            # 完整部署脚本（Release 附带）
+├── install-all.sh            # 部署脚本（驱动 + 虚拟显示器）
 ├── configs/                  # 全套配置模板（Sunshine / x11vnc / 输入 / 音频 / 电源）
 ├── docs/
 │   ├── driver-470-on-debian13.md   # Kepler 闭源驱动 470 在 Debian 13 的安装
@@ -27,10 +26,12 @@
 
 ## 快速开始（全新机器从零到可用）
 
-1. **安装 470 驱动**（Kepler 最后支持的闭源驱动）：[docs/driver-470-on-debian13.md](docs/driver-470-on-debian13.md)
-2. **创建虚拟显示器**：
+1. **运行部署脚本**（安装 470 驱动 + 虚拟显示器）：
    ```bash
-   cd nvidia-vdisplay && sudo sh install.sh
+   sudo sh install-all.sh      # 国内网络可加 MIRROR=http://mirrors.ustc.edu.cn/debian
+   ```
+2. **让虚拟屏生效**：
+   ```bash
    sudo vdisplay apply --restart-display
    sudo vdisplay status        # 应看到虚拟屏 connected
    ```
