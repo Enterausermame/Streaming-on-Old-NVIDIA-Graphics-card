@@ -6,7 +6,7 @@
 ## 1. 安装 Sunshine（LizardByte 官方源）
 
 ```bash
-# 添加源（或用 apt 一键脚本）
+# 添加源（或用 apt 安装脚本）
 curl -fsSL https://apt.lizardbyte.dev/install.sh | bash
 sudo apt install sunshine
 ```
@@ -51,7 +51,7 @@ systemctl --user enable --now app-dev.lizardbyte.app.Sunshine.service
 
 ## 6. 配对（Pairing）API 全流程
 
-Moonlight 客户端发起配对 → 显示 4 位 PIN → 在服务端提交。全自动化的完整步骤：
+Moonlight 客户端发起配对 → 显示 4 位 PIN → 在服务端提交。把流程串起来的完整步骤：
 
 ```bash
 # ① 客户端: moonlight pair <主机IP>（窗口显示 PIN）
@@ -70,7 +70,7 @@ curl -sk -u <用户>:<密码> https://localhost:47990/api/clients/list
 ```
 
 **踩坑提示**：
-- PIN 有效期很短（约 1 分钟），自动化流程要"读 PIN → 立即提交"一气呵成；
+- PIN 有效期很短（约 1 分钟），整套流程要"读 PIN → 立即提交"一气呵成；
 - 客户端每次配对生成新的 pairing_id，不能复用旧的；
 - 若返回 `409 pairing session already exists`：重启 sunshine 服务清空内存中的待配对状态；
 - JSON 必须严格合法（引号转义错误会得到 `json.exception.parse_error`）。
