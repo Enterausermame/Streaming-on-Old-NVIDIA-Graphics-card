@@ -1,0 +1,10 @@
+# KDE 电源管理（~/.config/powerdevilrc）
+# 无头常开场景：关闭显示器超时/变暗（-1 = 永不），禁自动挂起
+
+[AC][Display]
+TurnOffDisplayIdleTimeoutSec=-1
+DimDisplayIdleTimeoutSec=-1
+
+[AC][SuspendAndShutdown]
+AutoSuspendAction=0
+SleepMode=0

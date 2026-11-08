@@ -1,0 +1,11 @@
+# Sunshine 配置模板 — 无头 Kepler 主机 + Intel iGPU VAAPI 方案
+# 复制为 ~/.config/sunshine/sunshine.conf 并替换占位符
+# 注意：新版 Sunshine 的 Web UI 凭据已迁移到 sunshine_state.json，
+#       首次运行通过 API 设置（见 docs/sunshine-moonlight.md 第 5 节）
+
+sunshine_name = <你的主机显示名>
+display_name = x11
+fps = 60
+encoder = vaapi
+upnp = disabled
+high_resolution_scrolling = disabled

@@ -1,0 +1,13 @@
+[Unit]
+Description=Remote desktop (VNC) on virtual display
+After=display-manager.service
+Requires=display-manager.service
+
+[Service]
+Type=simple
+ExecStart=/opt/nvidia-vdisplay/bin/x11vnc-wrapper.sh
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

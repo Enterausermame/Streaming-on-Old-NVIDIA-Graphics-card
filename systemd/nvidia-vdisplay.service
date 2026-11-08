@@ -1,0 +1,15 @@
+[Unit]
+Description=Apply NVIDIA virtual displays (nvidia-vdisplay)
+# 必须在显示管理器启动前生成 EDID 与 Xorg 配置
+Before=display-manager.service
+After=local-fs.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+WorkingDirectory=/opt/nvidia-vdisplay
+ExecStart=/usr/bin/python3 -m vdisplay.cli apply --no-restart-display --no-initramfs
+ExecStartPost=/usr/bin/nvidia-smi -pm 1
+
+[Install]
+WantedBy=multi-user.target

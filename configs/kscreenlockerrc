@@ -1,0 +1,6 @@
+# KDE 锁屏（~/.config/kscreenlockerrc）
+# 无头远程场景禁用自动锁屏（配合 powerdevilrc 的熄屏禁用）
+
+[Daemon]
+Autolock=false
+LockOnResume=false

@@ -1,0 +1,6 @@
+# KDE 输入配置（~/.config/kcminputrc）
+# 虚拟鼠标设备平直加速 + 中性指针速度；滚动速度可在 GUI 中按个人喜好调整
+
+[Mouse]
+XLbInptAccelProfileFlat=false
+XLbInptPointerAcceleration=0
